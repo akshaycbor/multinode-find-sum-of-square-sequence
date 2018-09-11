@@ -44,7 +44,7 @@ defmodule SumOfSquares do
             x = get_sum_of_squares(first_number, max_length, 0)
             x = :math.sqrt(x)
             if x==trunc(x) do
-                IO.puts("#{first_number}, #{Node.self}")
+                IO.puts("#{first_number}")
             end
         end
     end

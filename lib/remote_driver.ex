@@ -18,10 +18,10 @@ defmodule RemoteDriver do
     """
     def spawn_nodes([head_node|nodes], first_number, last_number, chunk_size, max_length) do
         if first_number+chunk_size < last_number do
-            Node.spawn_link(head_node, SumofSquares, :init, [{first_number, first_number+chunk_size, max_length}])
+            Node.spawn_link(head_node, SumOfSquares, :init, [{first_number, first_number+chunk_size, max_length}])
             spawn_nodes(nodes, first_number+chunk_size+1, last_number, chunk_size, max_length)
         else
-            Node.spawn_link(head_node, SumofSquares, :init, [{first_number, last_number, max_length}])
+            Node.spawn_link(head_node, SumOfSquares, :init, [{first_number, last_number, max_length}])
         end
     end
 end
